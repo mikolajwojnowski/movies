@@ -1,0 +1,324 @@
+
+/*fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/*for whole content*/
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box; /*border-box sizing */
+    font-family: Poppins;
+}
+
+body{
+    background-color: #e4e9f7;
+
+}
+
+/*LOGIN AND SIGN IN FORM*/
+.container{
+    display: flex;
+    align-items: center;
+    justify-content:center ;
+    min-height: 90vh;
+}
+
+/*div box flex - whole width of the page */
+.box{
+    background-color: #ffffffe0;
+    display: flex;
+    flex-direction: column;
+    padding: 25px 25px;
+    border-radius: 20px;
+
+}
+.form-box{
+    width: 450px;
+    margin: 0px 10px;
+}
+
+.form-box header{
+    
+    font-size: 24px;
+    font-weight: 600;
+    padding-bottom: 20px;
+    border-bottom: 1px solid  #e4e9f7;
+    margin-bottom: 10px;
+}
+
+.form-box form .field{
+    display: flex;
+    margin-bottom: 10px;
+    flex-direction: column;
+} 
+.form-box form .input input{
+    height: 35px;
+    width: 100%;
+    font-size: 16px;
+    padding: 0px 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    outline:none;
+}
+.form-box form
+option{
+    height: 35px;
+    width: 100%;
+    font-size: 16px;
+    padding: 0px 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    outline:none;
+}
+.btn{
+    height: 40px;
+    background: rgba(111, 11, 22, 1);
+    border: 0;
+    border-radius: 5px;
+    color:#fff;
+    font-size: 15px;
+    cursor: pointer;
+    margin-top: 10px;
+    padding: 0 10px;
+}
+.btn:hover{
+    opacity: 0.80;
+}
+.submit{
+    width: 100%;
+}
+
+.links{
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+.links a{
+    color:  rgba(111, 11, 22, 1);
+    text-decoration: none;
+}
+.links a:hover{
+    opacity: 0.5 ;
+    
+}
+.gender-group {
+    display: flex; /* Aligns items horizontally */
+    gap: 10px; /* Space between items */
+    margin-top: 1px; /* Spacing from the label */
+    margin-bottom: 10px;
+}
+
+.gender-group label {
+    height: 35px;
+    display: flex; /* Makes each label a flex container */
+    align-items: center; /* Centers the radio button and text vertically */
+    gap: 5px; /* Space between the radio button and label text */
+    padding: 5px 15px; /* Adds some internal spacing */
+    border: 1px solid #ccc; /* Adds a border around each option */
+    border-radius: 5px; /* Rounds the corners */
+    cursor: pointer; /* Changes cursor to indicate clickable area */
+    transition: background-color 0.3s, border-color 0.3s; /* Smooth hover effect */
+}
+
+.gender-group label:hover {
+    background-color: #f0f8ff; /* Light background color on hover */
+    border-color: #007BFF; /* Change border color on hover */
+}
+
+.gender-group input[type="radio"] {
+    accent-color: #007BFF; /* Changes the color of the selected radio button */
+    cursor: pointer; /* Ensures the radio button also shows a pointer cursor */
+}
+
+.gender-group input[type="radio"]:checked + label {
+    background-color: #007BFF; /* Background color when selected */
+    color: white; /* Text color when selected */
+    border-color: #0056b3; /* Darker border when selected */
+}
+
+
+
+.file-label {
+    display: inline-block;
+    padding: 6px 12px;
+    background-color: #f0f8ff; /* Light blue background */
+    color: black;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    font-size: 14px;
+    text-align:justify;
+    transition: background-color 0.3s ease;
+    
+    margin-top: -10px;
+}
+
+.file-label:hover {
+    background-color: rgba(111, 11, 22, 1); /* Dark red on hover */
+    opacity: 0.5;
+}
+
+.file-name {
+    font-size: 14px;
+    color: #555; /* Subtle gray color for file name */
+    font-style: italic;
+}
+
+input[type="file"] {
+    display: none; /* Keep the default file input hidden */
+}
+
+.field.input.file {
+    display: flex;
+ /* Vertically align label and file name */
+    gap: 10px; /* Spacing between elements */
+}
+
+
+.field.input select{
+    height: 35px;
+    width: 100%;
+    font-size: 14px;
+    padding: 0px 10px;
+    border-radius: 5px; 
+    border: 1px solid #ccc;
+    outline:none;
+}
+
+
+
+
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: rgba(111, 11, 22, 1);
+    color: white;
+    
+}
+
+.navbar .logo {
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+}
+.navbar .logo:hover{
+    color:#000000;
+}
+.navbar .auth-links a {
+    color: white;
+    text-decoration: none;
+    margin-left: 15px;
+    padding: 8px 15px;
+    border-radius: 5px;
+    background-color: rgba(111, 11, 22, 1);
+    transition: background-color 0.3s;
+}
+
+.navbar .auth-links a:hover {
+    background-color: #000000;
+}
+
+/* Main Content */
+.container1 {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+
+/* Movie Catalog */
+.catalog {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.movie-card { /* wyglad karty z filmem*/
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.movie-card-content a{
+    color: rgba(111, 11, 22, 1);
+    text-decoration: none;
+
+}
+.movie-card-content a:hover{
+   opacity: 0.6;
+   
+
+}
+
+
+.movie-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.movie-card img {
+    width: 100%;
+    height: auto;
+}
+
+.movie-card-content {
+    padding: 15px;
+}
+
+.movie-card-content h2 {
+    font-size: 18px;
+    margin: 0;
+}
+
+.movie-card-content p {
+    color: #666;
+    margin: 10px 0;
+}
+
+.movie-card-content .release-date,
+.movie-card-content .rating {
+    font-size: 14px;
+    color: #999;
+}
+
+.sorting {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+
+.sorting select {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+/* Search Box */
+.search-box {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+
+.search-box input {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    width: 250px;
+}
+    
+  
