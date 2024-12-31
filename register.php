@@ -64,7 +64,6 @@ if (isset($_POST["submit"])) {
 }
 ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -80,14 +79,22 @@ if (isset($_POST["submit"])) {
         <div class="box form-box">
             <?php if ($registrationSuccess): ?>
                 <!-- Success Message -->
-                <header>Registration Successful!</header>
-                <div class="message success">
-                    <p>Your registration was successful.</p>
-                </div>
-                <div class="buttons">
-                    <button onclick="location.href='register.php'">Go Back to Form</button>
-                    <button onclick="location.href='login.html'">Go to Login</button>
-                </div>
+                <div class="loader"></div> <!-- Add loader animation -->
+                <script>
+                    // Delay showing the success message
+                    setTimeout(function () {
+                        document.querySelector('.form-box').innerHTML = `
+                            <header>Registration Successful!</header>
+                            <div class="message success">
+                                <p>Your registration was successful.</p>
+                            </div>
+                            <div class="buttons">
+                                <button onclick="location.href='register.php'">Go Back to Form</button>
+                                <button onclick="location.href='login.php'">Go to Login</button>
+                            </div>
+                        `;
+                    }, 3000); // 2 seconds delay
+                </script>
             <?php else: ?>
                 <!-- Registration Form -->
                 <header>Sign Up</header>
@@ -156,13 +163,10 @@ if (isset($_POST["submit"])) {
                     </div>
                     <div class="field input file">
                         <label for="pic">Profile Picture <small>(optional)</small></label>
-                        <!-- Custom-styled file input label -->
                         <label for="pic" class="file-label">Choose a file</label>
                         <span class="file-name" id="file-name">No file chosen</span>
                         <input type="file" name="pic" id="pic" accept="image/*" onchange="updateFileName()">
                     </div>
-
-
 
                     <div class="field">
                         <input type="submit" name="submit" value="Register" class="btn">
