@@ -1,5 +1,11 @@
 <?php
+
 session_start();
+//debug reason only//
+// print_r($_SESSION['user']);
+// print_r($_SESSION['id']);
+// in assiociative array we store user email and user_id for session handling 
+
 ?>
 
 <!DOCTYPE html>
@@ -13,7 +19,7 @@ session_start();
 <body>
     <!-- Navbar -->
     <nav class="navbar">
-        <a href="#" class="logo">Movie Catalog</a>
+        <a href="index.php" class="logo">Movie Catalog</a>
 
         <!-- Welcome Message -->
         <div class="welcome">
@@ -25,6 +31,7 @@ session_start();
         <!-- Authentication Links -->
         <div class="auth-links">
             <?php if (isset($_SESSION['user'])): ?>
+                <a href="user_profile.php">Profile</a>
                 <a href="logout.php">Logout</a>
             <?php else: ?>
                 <a href="login.php">Log In</a>
@@ -46,7 +53,8 @@ session_start();
         <div class="sorting">
             <label for="sort-by">Sort by:</label>
             <select id="sort-by" onchange="sortMovies()">
-                <option value="name">Name</option>
+                <option value="name">Name A-Z</option>
+                <option value="name-desc">Name Z-A</option>
                 <option value="rating">Average Rating</option>
             </select>
         </div>
@@ -55,7 +63,20 @@ session_start();
         <div class="catalog" id="catalog">
             <!-- JavaScript will dynamically load movie cards here -->
         </div>
+
+        <!-- Loading indicator -->
+        <div id="loading" style="display: none;">Loading more movies...</div>
     </div>
+
+    <!-- Recommendations Button -->
+     <!-- idk, its not visible anyway, delete it  -->
+    <?php if (isset($_SESSION['user'])): ?>
+        <div class="recommendations">
+            <form action="generate_recommendations.php" method="post">
+                <button type="submit">Generate Recommendations</button>
+            </form>
+        </div>
+    <?php endif; ?>
 
     <script type="module" src="script.js"></script>
 </body>
